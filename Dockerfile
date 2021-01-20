@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.2.0-devel-ubuntu16.04
+FROM nvidia/cuda:10.1-devel-ubuntu16.04
 
 MAINTAINER nobody
 
