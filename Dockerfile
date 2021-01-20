@@ -1,6 +1,6 @@
-FROM nvidia/cuda:8.0-devel-ubuntu16.04
+FROM nvidia/cuda:11.2.0-devel-ubuntu16.04
 
-MAINTAINER Anthony Tatowicz
+MAINTAINER nobody
 
 WORKDIR /
 
@@ -28,7 +28,7 @@ RUN apt-get update \
 # Git repo set up
 RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     cd ethminer; \
-    git checkout tags/v0.12.0 
+    git checkout tags/v0.19.0 
 
 # Build
 RUN cd ethminer; \
