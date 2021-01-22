@@ -35,7 +35,7 @@ RUN cd ethminer; \
     git submodule update --init --recursive; \
     mkdir build; \
     cd build; \
-    cmake .. -DETHASHCUDA=ON -DETHASHCL=OFF -DETHSTRATUM=ON; \
+    cmake .. -DETHASHCUDA=ON -DETHASHCL=OFF -DETHSTRATUM=ON -DCOMPUTE=86; \
     cmake --build .; \
     make install;
 
