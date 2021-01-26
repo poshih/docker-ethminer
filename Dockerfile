@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.2-devel-ubuntu20.04
+FROM nvidia/cuda:11.2.0-devel-ubuntu20.04
 
 MAINTAINER nobody
 
@@ -9,7 +9,10 @@ RUN apt update \
     && apt upgrade -y \    
     && apt-get install -y git \
      cmake \
-     build-essential
+     build-essential     
+     
+RUN sudo nvidia-smi -pm 1 \
+&& nvidia-smi -pl 105;
      
 # Git repo set up
 RUN git clone https://github.com/ethereum-mining/ethminer.git; \
@@ -20,5 +23,7 @@ RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     cmake .. -DETHASHCUDA=ON -DETHASHCL=OFF -DETHSTRATUM=ON; \
     cmake --build .; \
     make install;	
+    
+    
 
 ENTRYPOINT ["/usr/local/bin/ethminer", "-U"]
