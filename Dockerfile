@@ -4,6 +4,8 @@ MAINTAINER nobody
 
 WORKDIR /
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Package and dependency setup
 RUN apt update \
     && apt upgrade -y \    
