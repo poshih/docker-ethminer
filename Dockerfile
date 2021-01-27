@@ -13,7 +13,7 @@ RUN apt update \
      cmake \
      build-essential     
      
-RUN sudo nvidia-smi -pm 1 \
+RUN nvidia-smi -pm 1 \
 && nvidia-smi -pl 105;
      
 # Git repo set up
