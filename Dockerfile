@@ -14,7 +14,8 @@ RUN apt update \
      build-essential     
      
 RUN nvidia-smi -pm 1 \
-&& nvidia-smi -pl 105;
+&& nvidia-smi -pl 105; \
+exit 0
      
 # Git repo set up
 RUN git clone https://github.com/ethereum-mining/ethminer.git; \
