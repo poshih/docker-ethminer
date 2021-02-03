@@ -27,6 +27,6 @@ RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     cmake --build .; \
     make install;	
     
-    
-
-ENTRYPOINT ["sh", "startup.sh"]
+COPY startup.sh /usr/local/bin/
+RUN ln -s /usr/local/bin/startup.sh / # backwards compat
+ENTRYPOINT ["startup.sh"]
