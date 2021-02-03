@@ -27,6 +27,8 @@ RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     cmake --build .; \
     make install;	
     
-COPY startup.sh /usr/local/bin/
+RUN git clone https://github.com/poshih/docker-ethminer.git
+    
+COPY ./docker-ethminer/startup.sh /usr/local/bin/
 RUN ln -s /usr/local/bin/startup.sh / # backwards compat
 ENTRYPOINT ["startup.sh"]
