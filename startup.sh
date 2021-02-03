@@ -10,6 +10,9 @@ cleanup() {
 #Trap SIGTERM
 trap 'cleanup' SIGTERM
 
+sudo nvidia-smi -pm 1
+sudo nvidia-smi -pl 110
+
 "${@}" &
 
 #Wait
