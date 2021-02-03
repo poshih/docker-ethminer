@@ -29,4 +29,4 @@ RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     
     
 
-ENTRYPOINT ["startup.sh"]
+ENTRYPOINT ["sh", "startup.sh"]
