@@ -26,4 +26,4 @@ RUN git clone https://github.com/ethereum-mining/ethminer.git; \
 ADD startup.sh /startup.sh
 RUN chmod +x /startup.sh
     
-ENTRYPOINT ["startup.sh"]
+#ENTRYPOINT ["startup.sh"]
