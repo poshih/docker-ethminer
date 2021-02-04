@@ -5,6 +5,7 @@ set -e
 cleanup() {
     echo "Container stopped, performing cleanup..."
     sudo nvidia-smi -pl 220
+    exit 0
 }
 
 #Trap SIGTERM
@@ -15,8 +16,4 @@ sudo nvidia-smi -pl 110
 
 "${@}" &
 
-#Wait
-wait $!
-
-#Cleanup
-cleanup
+while true; do :; done
