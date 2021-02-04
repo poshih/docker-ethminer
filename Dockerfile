@@ -25,7 +25,5 @@ RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     
 ADD startup.sh /startup.sh
 RUN chmod +x /startup.sh
-COPY startup.sh /usr/local/bin/
-RUN ln -s /usr/local/bin/startup.sh / # backwards compat
     
 ENTRYPOINT ["startup.sh"]
