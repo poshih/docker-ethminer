@@ -12,11 +12,7 @@ RUN apt update \
     && apt-get install -y git \
      cmake \
      build-essential     
-     
-RUN sudo nvidia-smi -pm 1 \
-&& sudo nvidia-smi -pl 100; \
-exit 0
-     
+         
 # Git repo set up
 RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     cd ethminer; \
@@ -27,8 +23,7 @@ RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     cmake --build .; \
     make install;	
     
-RUN git clone https://github.com/poshih/docker-ethminer.git; \
-    cp ./docker-ethminer/startup.sh /usr/local/bin/; \
-    ln -s /usr/local/bin/startup.sh / # backwards compat
+COPY startup.sh /usr/local/bin/
+RUN ln -s /usr/local/bin/startup.sh / # backwards compat
     
 ENTRYPOINT ["startup.sh"]
