@@ -23,7 +23,7 @@ RUN git clone https://github.com/ethereum-mining/ethminer.git; \
     cmake --build .; \
     make install;	
     
-ADD startup.sh /startup.sh
-RUN chmod +x /startup.sh
+ADD startup.sh /root/onstart.sh
+RUN chmod +x /root/onstart.sh
     
 #ENTRYPOINT ["startup.sh"]
